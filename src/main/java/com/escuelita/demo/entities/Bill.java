@@ -14,7 +14,6 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 public class Bill {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

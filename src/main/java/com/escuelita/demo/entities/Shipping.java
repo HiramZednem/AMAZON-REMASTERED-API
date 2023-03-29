@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class Shipping {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

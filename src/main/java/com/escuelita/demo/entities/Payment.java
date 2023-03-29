@@ -13,7 +13,6 @@ import javax.validation.constraints.Pattern;
 @Table(name = "payments")
 @Getter @Setter
 public class Payment {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

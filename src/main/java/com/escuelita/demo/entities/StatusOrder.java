@@ -13,7 +13,6 @@ import java.util.List;
 @Getter
 @Setter
 public class StatusOrder {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
