@@ -17,7 +17,6 @@ import com.escuelita.demo.configuration.RateLimit;
 
 @Configuration
 public class WebSecurityConfig {
-
     private final UserDetailsService userDetailsService;
     private final JWTAuthorizationFilter jwtAuthorizationFilter;
     private final RateLimit rateLimitFilter;
