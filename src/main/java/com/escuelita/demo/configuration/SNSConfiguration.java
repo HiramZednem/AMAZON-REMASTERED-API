@@ -18,12 +18,12 @@ public class SNSConfiguration {
     @Value(value = "${aws.secret-key-s3}")
     private String secretAccessKey;
 
-    @Primary
-    @Bean
+    @Primary @Bean
     public AmazonSNSClient getSNSClient() {
-        return (AmazonSNSClient) AmazonSNSClientBuilder.standard().withRegion(Regions.US_EAST_1)
-                .withCredentials(new AWSStaticCredentialsProvider(
-                        new BasicAWSCredentials(accessKeyId, secretAccessKey)))
+        return (AmazonSNSClient) AmazonSNSClientBuilder
+                .standard()
+                .withRegion(Regions.US_EAST_1)
+                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKeyId, secretAccessKey)))
                 .build();
     }
 }

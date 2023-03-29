@@ -15,18 +15,13 @@ import com.google.common.util.concurrent.RateLimiter;
 
 @Component
 public class RateLimit extends OncePerRequestFilter {
-
     private final RateLimiter rateLimiter = RateLimiter.create(10);
-
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
-            FilterChain filterChain)
-            throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         if (rateLimiter.tryAcquire()) {
             filterChain.doFilter(request, response);
         } else {
             response.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
         }
     }
-
 }
