@@ -1,3 +1,3 @@
 FROM openjdk:11
-ADD target/cakeecommerce.jar cakeecommerce.jar
+ADD target/bah.jar bah.jar
 ENTRYPOINT ["java", "-jar", "cakeecommerce.jar"]
